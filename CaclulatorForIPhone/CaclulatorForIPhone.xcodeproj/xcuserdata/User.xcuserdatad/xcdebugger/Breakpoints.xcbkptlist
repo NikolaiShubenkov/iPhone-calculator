@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CaclulatorForIPhone/_1ViewController.h"
-         timestampString = "367809584.612476"
+         timestampString = "368211584.670121"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "22"
-         endingLineNumber = "22"
+         startingLineNumber = "18"
+         endingLineNumber = "18"
          landmarkName = "-ButtonDotClicked:"
          landmarkType = "4">
       </FileBreakpoint>
@@ -21,37 +21,24 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CaclulatorForIPhone/_1ViewController.m"
-         timestampString = "367817541.354508"
+         timestampString = "368212754.31468"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "73"
-         endingLineNumber = "73"
-         landmarkName = "-ButtonDigitClicked:"
-         landmarkType = "5">
+         startingLineNumber = "77"
+         endingLineNumber = "77"
+         landmarkName = "@implementation _1ViewController"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CaclulatorForIPhone/_1ViewController.m"
-         timestampString = "367822678.639702"
+         timestampString = "368212754.31468"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "172"
-         endingLineNumber = "172"
-         landmarkName = "-ButtonEqualClicked:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "CaclulatorForIPhone/_1ViewController.m"
-         timestampString = "367821468.355863"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "116"
-         endingLineNumber = "116"
+         startingLineNumber = "121"
+         endingLineNumber = "121"
          landmarkName = "-ButtonDotClicked:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,25 +47,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CaclulatorForIPhone/_1ViewController.m"
-         timestampString = "367821468.355863"
+         timestampString = "368216400.877871"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "120"
-         endingLineNumber = "120"
+         startingLineNumber = "121"
+         endingLineNumber = "121"
          landmarkName = "-ButtonDotClicked:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "CaclulatorForIPhone/_1ViewController.m"
-         timestampString = "367821468.355863"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "130"
-         endingLineNumber = "130"
-         landmarkName = "-ButtonCLRClicked:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -124,32 +98,6 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "CaclulatorForIPhone/_1ViewController.m"
-         timestampString = "367822678.639702"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "223"
-         endingLineNumber = "223"
-         landmarkName = "-ButtonEqualClicked:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "CaclulatorForIPhone/_1ViewController.m"
-         timestampString = "367821468.355863"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "168"
-         endingLineNumber = "168"
-         landmarkName = "-ButtonEqualClicked:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "CaclulatorForIPhone/NSString+Symbols.m"
          timestampString = "367816170.774233"
          startingColumnNumber = "9223372036854775807"
@@ -160,7 +108,7 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CaclulatorForIPhone/main.m"
@@ -190,11 +138,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CaclulatorForIPhone/_1ViewController.m"
-         timestampString = "367821468.355863"
+         timestampString = "368212754.31468"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "100"
-         endingLineNumber = "100"
+         startingLineNumber = "104"
+         endingLineNumber = "104"
          landmarkName = "-ButtonDigitClicked:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -203,11 +151,102 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CaclulatorForIPhone/_1ViewController.m"
-         timestampString = "367821468.355863"
+         timestampString = "368212754.31468"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "128"
-         endingLineNumber = "128"
+         startingLineNumber = "104"
+         endingLineNumber = "104"
+         landmarkName = "-ButtonDigitClicked:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "CaclulatorForIPhone/_1ViewController.m"
+         timestampString = "368227356.832149"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "228"
+         endingLineNumber = "228"
+         landmarkName = "-ButtonEqualClicked:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "CaclulatorForIPhone/_1ViewController.m"
+         timestampString = "368212754.31468"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "79"
+         endingLineNumber = "79"
+         landmarkName = "-ButtonDigitClicked:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "CaclulatorForIPhone/_1ViewController.m"
+         timestampString = "368212754.31468"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "82"
+         endingLineNumber = "82"
+         landmarkName = "-ButtonDigitClicked:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "CaclulatorForIPhone/_1ViewController.m"
+         timestampString = "368212518.780475"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "44"
+         endingLineNumber = "44"
+         landmarkName = "@implementation _1ViewController"
+         landmarkType = "3">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "CaclulatorForIPhone/_1ViewController.m"
+         timestampString = "368212754.31468"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "111"
+         endingLineNumber = "111"
+         landmarkName = "-ButtonDotClicked:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "CaclulatorForIPhone/_1ViewController.h"
+         timestampString = "368210371.926922"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "20"
+         endingLineNumber = "20"
+         landmarkName = "-ButtonOperationWithResultClicked:"
+         landmarkType = "4">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "CaclulatorForIPhone/_1ViewController.m"
+         timestampString = "368216400.877871"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "135"
+         endingLineNumber = "135"
          landmarkName = "-ButtonCLRClicked:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -216,11 +255,63 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CaclulatorForIPhone/_1ViewController.m"
-         timestampString = "367821468.355863"
+         timestampString = "368216400.877871"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "155"
-         endingLineNumber = "155"
+         startingLineNumber = "137"
+         endingLineNumber = "137"
+         landmarkName = "-ButtonCLRClicked:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "CaclulatorForIPhone/_1ViewController.m"
+         timestampString = "368216400.877871"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "139"
+         endingLineNumber = "139"
+         landmarkName = "@implementation _1ViewController"
+         landmarkType = "3">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "CaclulatorForIPhone/_1ViewController.m"
+         timestampString = "368216400.877871"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "138"
+         endingLineNumber = "138"
+         landmarkName = "-ButtonCLRClicked:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "CaclulatorForIPhone/_1ViewController.m"
+         timestampString = "368212499.070476"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "45"
+         endingLineNumber = "45"
+         landmarkName = "@implementation _1ViewController"
+         landmarkType = "3">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "CaclulatorForIPhone/_1ViewController.m"
+         timestampString = "368227356.832149"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "199"
+         endingLineNumber = "199"
          landmarkName = "-ButtonEqualClicked:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -229,24 +320,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CaclulatorForIPhone/_1ViewController.m"
-         timestampString = "367821468.355863"
+         timestampString = "368227356.832149"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "100"
-         endingLineNumber = "100"
-         landmarkName = "-ButtonDigitClicked:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "CaclulatorForIPhone/_1ViewController.m"
-         timestampString = "367821468.355863"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "156"
-         endingLineNumber = "156"
+         startingLineNumber = "198"
+         endingLineNumber = "198"
          landmarkName = "-ButtonEqualClicked:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -255,24 +333,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CaclulatorForIPhone/_1ViewController.m"
-         timestampString = "367821468.355863"
+         timestampString = "368227356.832149"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "95"
-         endingLineNumber = "95"
-         landmarkName = "-ButtonDigitClicked:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "CaclulatorForIPhone/_1ViewController.m"
-         timestampString = "367822678.639702"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "224"
-         endingLineNumber = "224"
+         startingLineNumber = "183"
+         endingLineNumber = "183"
          landmarkName = "-ButtonEqualClicked:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -281,12 +346,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CaclulatorForIPhone/_1ViewController.m"
-         timestampString = "367822678.639702"
+         timestampString = "368227429.752046"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "222"
-         endingLineNumber = "222"
-         landmarkName = "-ButtonEqualClicked:"
+         startingLineNumber = "262"
+         endingLineNumber = "262"
+         landmarkName = "-ButtonOperationWithResultClicked:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -294,38 +359,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CaclulatorForIPhone/_1ViewController.m"
-         timestampString = "367821021.860096"
+         timestampString = "368227429.752046"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "75"
-         endingLineNumber = "75"
-         landmarkName = "-ButtonDigitClicked:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "CaclulatorForIPhone/_1ViewController.m"
-         timestampString = "367819033.619698"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "78"
-         endingLineNumber = "78"
-         landmarkName = "-ButtonDigitClicked:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "CaclulatorForIPhone/_1ViewController.m"
-         timestampString = "367821468.355863"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "158"
-         endingLineNumber = "158"
-         landmarkName = "-ButtonEqualClicked:"
+         startingLineNumber = "277"
+         endingLineNumber = "277"
+         landmarkName = "-ButtonOperationWithResultClicked:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

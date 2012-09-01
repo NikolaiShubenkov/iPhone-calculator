@@ -20,7 +20,6 @@
 		CE2E3E9715EABAFF0096DCE8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2E3E7815EABAFF0096DCE8 /* Foundation.framework */; };
 		CE2E3E9F15EABAFF0096DCE8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE2E3E9D15EABAFF0096DCE8 /* InfoPlist.strings */; };
 		CE2E3EA215EABAFF0096DCE8 /* CaclulatorForIPhoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2E3EA115EABAFF0096DCE8 /* CaclulatorForIPhoneTests.m */; };
-		CE2E3EAC15EAC0170096DCE8 /* MainStoryboard in Resources */ = {isa = PBXBuildFile; fileRef = CE2E3EAB15EAC0170096DCE8 /* MainStoryboard */; };
 		CEE839AF15EAC604004AB561 /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE839AE15EAC604004AB561 /* Calculator.m */; };
 		CEE839BA15EAF803004AB561 /* NSString+Symbols.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE839B915EAF803004AB561 /* NSString+Symbols.m */; };
 /* End PBXBuildFile section */
@@ -55,7 +54,6 @@
 		CE2E3E9E15EABAFF0096DCE8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CE2E3EA015EABAFF0096DCE8 /* CaclulatorForIPhoneTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaclulatorForIPhoneTests.h; sourceTree = "<group>"; };
 		CE2E3EA115EABAFF0096DCE8 /* CaclulatorForIPhoneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaclulatorForIPhoneTests.m; sourceTree = "<group>"; };
-		CE2E3EAB15EAC0170096DCE8 /* MainStoryboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = MainStoryboard; path = ../../../../backup/MainStoryboard; sourceTree = "<group>"; };
 		CEE839AD15EAC604004AB561 /* Calculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calculator.h; sourceTree = "<group>"; };
 		CEE839AE15EAC604004AB561 /* Calculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calculator.m; sourceTree = "<group>"; };
 		CEE839B815EAF803004AB561 /* NSString+Symbols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Symbols.h"; sourceTree = "<group>"; };
@@ -89,7 +87,6 @@
 		CE2E3E6715EABAFE0096DCE8 = {
 			isa = PBXGroup;
 			children = (
-				CE2E3EAB15EAC0170096DCE8 /* MainStoryboard */,
 				CE2E3E7C15EABAFF0096DCE8 /* CaclulatorForIPhone */,
 				CE2E3E9A15EABAFF0096DCE8 /* CaclulatorForIPhoneTests */,
 				CE2E3E7515EABAFF0096DCE8 /* Frameworks */,
@@ -238,7 +235,6 @@
 			files = (
 				CE2E3E8115EABAFF0096DCE8 /* InfoPlist.strings in Resources */,
 				CE2E3E8A15EABAFF0096DCE8 /* MainStoryboard.storyboard in Resources */,
-				CE2E3EAC15EAC0170096DCE8 /* MainStoryboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

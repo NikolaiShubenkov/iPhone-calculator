@@ -54,7 +54,7 @@
 if(value == 0){
     @throw (@"Deviding by Zero");
     return -1;}
-accumulator/=value;
+accumulator/=(double)value;
 return accumulator;
 }
 -(double) changeSign{
@@ -67,8 +67,8 @@ if(accumulator == 0){
     @throw (@"Dividing by Zero error");
 return -1;
 }
-    accumulator=1/accumulator;
-    return accumulator;
+accumulator=1/accumulator;
+return accumulator;
 }
 -(double) xSquared{
     accumulator*=accumulator;
@@ -121,3 +121,18 @@ return -1;
     return accumulator;    
 }
 @end//MemoryOps
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

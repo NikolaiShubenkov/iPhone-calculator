@@ -10,7 +10,7 @@
 
 #define _OP_CHANGE_SIGN     1
 #define _OP_RECIPROCAL      2
-#define _OP_SQEARED         3
+#define _OP_SQUARED         3
 #define _OP_POW             4
 #define _OP_SQRT            5
 #define _OP_MEMORY_CLEAR    6
@@ -24,19 +24,22 @@
 #define _OP_MULTIPLY        14
 #define _OP_DEVIDE          15
 #define _OP_CLR             16
+#define _MAXIMUM_DIGITS_IN_DISPLAY      15
 #import "_1ViewController.h"
 #import "NSString+Symbols.h"
 
+
+@interface _1ViewController ()
+
+@end
+
 static BOOL calcErrorOccured = NO;
-static char operation = 0;
+static char lastOperation = 0;
 static BOOL operationJustPerformed = NO;
 static BOOL reset = YES;
 static BOOL clearCalcDisplay = NO;
 static double buffer;
 
-@interface _1ViewController ()
-
-@end
 
 @implementation _1ViewController
 
@@ -44,8 +47,10 @@ static double buffer;
 -(void) dealloc{
     [myCalc release];
     [result release];
+    [calcDisplay release];
     [super dealloc];
-}
+}//dealloc
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -53,11 +58,11 @@ static double buffer;
               initWithAccumulator:0
               AndMemory:0];
     result = [[NSMutableString alloc]
-              initWithCapacity:(10)];
-    operation = '0';
+              initWithCapacity:(14)];
+    lastOperation = 0;
     clearCalcDisplay = NO;
     buffer = 0;
-}
+}//viewDidLoad
 
 - (void)viewDidUnload
 {
@@ -73,59 +78,54 @@ static double buffer;
 -(IBAction)ButtonDigitClicked:(id)sender{//Every button's tag is equal to its Label
  if(calcErrorOccured== NO){
      if(reset == YES ){
-         if(operation == _OP_SUBB)
-             [result setString: @"-"];
+         [result setString: @""];
          [result appendFormat:@"%i",[sender tag]];
          calcDisplay.text = result;
          reset = NO;
          clearCalcDisplay = NO;
-          
      }
      else
      if(clearCalcDisplay == YES){
          [result setString:@""];
          [result appendFormat:@"%i",[sender tag]];
-            calcDisplay.text = result;
-            clearCalcDisplay = NO;
+         calcDisplay.text = result;
+         clearCalcDisplay = NO;
          operationJustPerformed = NO;
-         
      }
-     else if([[calcDisplay text] length] < 15) {
-      /*   if( [result length] == 0 && reset == YES && operation == _OP_SUBB){
-             [result setString: @"-"];
-             reset = NO;
-         }
-         else */if( [result  compare:@"0"] == NSOrderedSame)
+     else if([[calcDisplay text] length] < _MAXIMUM_DIGITS_IN_DISPLAY) {
+         //clear extra 0
+         if( [result  compare:@"0"] == NSOrderedSame)
              [result setString:@""];
          [result appendFormat:@"%i", [sender tag]];
          calcDisplay.text = result;
          operationJustPerformed = NO;
          }
-     }
+ }//if error
 }
 
 
--(IBAction)ButtonDotClicked:(id)sender{
-if(calcErrorOccured == NO)
-    if(reset == YES){
+-(IBAction) ButtonDotClicked:(id)sender{
+ if(calcErrorOccured == NO){
+    if(reset == YES || clearCalcDisplay == YES){
+        reset = NO;
+        clearCalcDisplay = NO;
         [result setString:@"0."];
+        calcDisplay.text = result;
+        operationJustPerformed = NO;
     }
-    else if( [[calcDisplay text] length] < 15){
-        if(operationJustPerformed == YES || clearCalcDisplay == YES){
+    else if( [[calcDisplay text] containSymbols:@"."] == NO &&              // if there is no .
+            [[calcDisplay text] length]  < _MAXIMUM_DIGITS_IN_DISPLAY  ) {  // and not too much digits
+        if([[calcDisplay text] length] == 0)
             [result setString:@"0."];
-            operationJustPerformed = NO;
-            clearCalcDisplay = NO;
-        }
-        else if([[calcDisplay text] length] == 0)//if there is no coma
-            [result setString:@"0."];
-        //else if[result setstr
-        else if( [[calcDisplay text] containSymbols:@"."] == NO)
-                  calcDisplay.text = result;
-//       myCalc.accumulator = [result doubleValue];
+        else [result appendFormat:@"."];
+        calcDisplay.text = result;
+        operationJustPerformed = NO;
     }
-}
+  }//if error
+}// '.' clicked
+
                 
--(IBAction)ButtonCLRClicked:(id)sender{
+-(IBAction) ButtonCLRClicked:(id)sender{
     [result setString:@"0"];
     calcDisplay.text = result;
     [myCalc clear];
@@ -134,30 +134,58 @@ if(calcErrorOccured == NO)
     clearCalcDisplay = NO;
     reset = YES;
     buffer = 0;
-    operation = 0;
-}
+    lastOperation = 0;
+}//CLR clicked
 
--(IBAction)ButtonOperationClicked:(id)sender{
-if(calcErrorOccured == NO){
+-(IBAction) ButtonOperationWithTwoOperandsClicked:(id)sender{
     operationJustPerformed = NO;
-    if(reset == YES){
-        if( [sender tag] == _OP_SUBB)
-            operation = _OP_SUBB;
-    }
-    else {
-        operation = [sender tag];
-        clearCalcDisplay = YES;
+    if(reset == YES){//if it just the beginning of calculations
+        if( [sender tag] == _OP_SUBB ){
+            [result setString:@"-"];
+            reset = NO;
+        }//if _OPP_SUBB
+    }//if begiging of calculation
+    else{
+        lastOperation = [sender tag];
         myCalc.accumulator = [result doubleValue];
-   }
-}
-}
+        clearCalcDisplay = YES;
+    }//else
 
--(IBAction)ButtonEqualClicked:(id)sender{
-if(calcErrorOccured == 0 || !reset){
+ }//Op with 2 operands clicked
+
+-(void) displayResultWithPossibleErrorCode:(NSMutableString*) erCode{
+    [result setString:[NSString stringWithFormat:@"%.*f",(_MAXIMUM_DIGITS_IN_DISPLAY-1), myCalc.accumulator]];
+    if([result length] > _MAXIMUM_DIGITS_IN_DISPLAY && calcErrorOccured == NO){//if it is too much digits in result try to delete additional digits after '.'
+        // add new String with length of location of first .
+        int locationOfDot = [result rangeOfString:@"."].location;
+        if(locationOfDot != NSNotFound &&               //  if result has dot
+           locationOfDot < _MAXIMUM_DIGITS_IN_DISPLAY){ //  and it is located not much long from the begining
+            [result setString:[result substringToIndex:_MAXIMUM_DIGITS_IN_DISPLAY+1]];
+        }//if
+        else{
+            [erCode setString:@"Error. Too large result"];
+            calcErrorOccured = YES;
+        }//else
+    }//if too much digits
+    if(calcErrorOccured == YES){
+        calcDisplay.text  = [NSString stringWithFormat:@"%@", erCode];
+        reset = YES;
+        [result setString:@"0"];
+    }//if
+    else{
+        calcDisplay.text = [result StringWithowtZeroesInFloatNumberAtAppendix];
+        clearCalcDisplay = YES;
+        operationJustPerformed = YES;
+    }//else
+}//displayResultWithPossibleErrorCode
+
+-(IBAction) ButtonEqualClicked:(id)sender{
+ if(calcErrorOccured == NO && reset == NO){
+    NSMutableString *errorCode = [[NSMutableString alloc] initWithCapacity:15];//for showing on display
     clearCalcDisplay = YES;
-    if(operationJustPerformed == NO)
+    if(operationJustPerformed == NO)//read displayValue to buffer if it was new operation
         buffer = [result doubleValue];
-    switch (operation) {
+    switch (lastOperation) {
         case _OP_ADD:
             [myCalc add:buffer];
             break;
@@ -170,62 +198,98 @@ if(calcErrorOccured == 0 || !reset){
         case _OP_DEVIDE:
             if(buffer == 0){
                  calcErrorOccured = YES;
+                [errorCode setString:@"Division by zero error!"];
                  break;
             }
             else {
                 [myCalc divide:buffer];
                 break;
             }
-        case _OP_CHANGE_SIGN:{
-            [myCalc changeSign];
-            break;
-        case _OP_SQEARED:{
-            if( myCalc.accumulator == 0){
-                calcErrorOccured = YES;
-                break;
-            }
-            else{if (operationJustPerformed == NO)
-                    myCalc.accumulator = buffer;
-                [myCalc sqrt];
-            }
-            break;
-        }
-        case _OP_POW:{
+        case _OP_POW:
             [myCalc pow: buffer];
+            break;            
+        case _OP_RECIPROCAL:
+            if(myCalc.accumulator != 0)
+                buffer = [myCalc reciprocal];
+            else {//error
+                calcErrorOccured = YES;
+                [errorCode setString:@"Division by zero Error"];
+            }//else error
             break;
-        }
-        /*
-#define _OP_CHANGE_SIGN     1
-#define _OP_RECIPROCAL      2
-#define _OP_SQEARED         3
-#define _OP_POW             4
-#define _OP_SQRT            5
-#define _OP_MEMORY_CLEAR    6
-#define _OP_MEMORY_STORE    7
-#define _OP_MEMORY_RECALL   8
-#define _OP_MEMORY_ADD      9
-#define _OP_MEMORY_SUBSTRACT 10
-#define _CLR                11
-#define _OP_ADD             12
-#define _OP_SUBB            13
-#define _OP_MULTIPLY        14
-#define _OP_DEVIDE          15
-#define _OP_CLR             16
-*/
-        }
+        case _OP_SQRT:
+            if(buffer > 0)
+                buffer = [myCalc sqrt];
+            else{
+                calcErrorOccured = YES;
+                [errorCode setString:@"Squre from the below zero value error"];
+            }
+            break;
+    }//switch
+     [self displayResultWithPossibleErrorCode:errorCode];
+     [errorCode release];
+ }//if no error
+}//button error clicked
+
+-(IBAction)ButtonOperationWithMemoryClicked:(id)sender{
+    if(calcErrorOccured == NO && reset == NO){
+        lastOperation = [sender tag];
+        if(operationJustPerformed == NO)
+            myCalc.accumulator = [result doubleValue];
+        switch (lastOperation) {
+            case _OP_MEMORY_ADD:
+                [myCalc memoryAdd];
+                break;
+            case _OP_MEMORY_SUBSTRACT:
+                [myCalc memorySubstract];
+                break;
+            case _OP_MEMORY_STORE:
+                [myCalc memoryStore];
+                break;
+            case _OP_MEMORY_CLEAR:
+                [myCalc memoryClear];
+                break;
+            case _OP_MEMORY_RECALL:
+                [myCalc memoryRecall];
+                break;
+        }//switch
+        [result setString: [NSString stringWithFormat:@"%.*f",(_MAXIMUM_DIGITS_IN_DISPLAY-1),myCalc.accumulator]];
+        calcDisplay.text = [result StringWithowtZeroesInFloatNumberAtAppendix];
+        clearCalcDisplay  = YES;
     }
-        
-    if(calcErrorOccured == YES){
-        calcDisplay.text = [NSString stringWithFormat:@"Error"];
-        [result setString:@"0"];
-    }
-    else{
-        [result setString:[NSString stringWithFormat:@"%fl", myCalc.accumulator]];
-         calcDisplay.text = [result StringWithowtZeroesInFloatNumberAtAppendix];
-        clearCalcDisplay = YES;
-        operationJustPerformed = YES;
-    }
-  }
-}
+    
+}//button memory operation clicked
+
+-(IBAction) ButtonOperationWithResultClicked:(id)sender{
+    if(calcErrorOccured == NO && reset == NO){
+        NSMutableString *errorCode = [[NSMutableString alloc] initWithCapacity:15];
+        lastOperation = [sender tag];
+        if(operationJustPerformed == NO)
+            myCalc.accumulator = [[calcDisplay text]doubleValue];
+        switch (lastOperation) {
+            case _OP_RECIPROCAL:
+                if(myCalc.accumulator != 0)
+                    buffer = [myCalc reciprocal];
+                else {//error
+                    calcErrorOccured = YES;
+                    [errorCode setString:@"Division by zero Error"];
+                }//else error
+                break;
+            case _OP_SQRT:
+                if(myCalc.accumulator >= 0)
+                    [myCalc sqrt];
+                else{
+                    calcErrorOccured = YES;
+                    [errorCode setString:@"Squre from the below zero value error"];
+                }
+                break;
+        }//switch
+       [self displayResultWithPossibleErrorCode:errorCode];
+        [errorCode release];
+    }//if
+}//button operation with result clicked
 
 @end
+
+
+
+

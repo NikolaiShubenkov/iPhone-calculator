@@ -15,7 +15,7 @@
     else return NO;
 }
 
--(NSString*) StringWithowtZeroesInFloatNumberAtAppendix{//return tsring withowt additional 0 at the end
+-(NSString*) StringWithowtZeroesInFloatNumberAtAppendix{//return sring withowt additional 0 at the end
 if([ self containSymbols: @"."]){
     int indexOfFirstAdditionalZero = [self length]-1;
     for (int i = indexOfFirstAdditionalZero - 1; i > 0; i--){
@@ -23,7 +23,7 @@ if([ self containSymbols: @"."]){
             indexOfFirstAdditionalZero = i;
         else break;
     }
-    unichar a = '.';
+    //unichar a = '.';
     if( ([self characterAtIndex: indexOfFirstAdditionalZero - 1]  ) == '.')
         indexOfFirstAdditionalZero --;
     return [self substringToIndex: indexOfFirstAdditionalZero];
